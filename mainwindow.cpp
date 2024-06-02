@@ -2,12 +2,13 @@
 #include <QMessageBox>
 #include <QRegularExpression>
 #include <QRegularExpressionMatch>
+#include <QTemporaryFile>
 #include "./ui_mainwindow.h"
 #include "lyrics.h"
 #include "spotify.h"
 #include "trackview.h"
 
-const QString path = "C:/Users/Arsentii/OneDrive - НИУ Высшая школа экономики/playlist_2010to20222P.csv";
+const QString path = ":/playlist_2010to20222Mish.csv";
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
@@ -17,8 +18,10 @@ MainWindow::MainWindow(QWidget *parent)
     , trackView(nullptr)
     , stackedWidget(new QStackedWidget(this))
     , searchModel(new QStandardItemModel(this))
-    , lyricsView(new Lyrics(this))  // Инициализация lyricsView здесь
+    , lyricsView(new Lyrics(this))
     , process(new QProcess(this))
+    , login(nullptr)
+    , liked(new Liked(this))
 {
     ui->setupUi(this);
     this->hide();
@@ -42,20 +45,18 @@ MainWindow::MainWindow(QWidget *parent)
     connect(ui->edmButton, &QPushButton::clicked, this, &MainWindow::on_edmButton_clicked);
     connect(ui->searchLine, &QLineEdit::textChanged, this, &MainWindow::on_searchLine_textChanged);
     connect(ui->searchList, &QListView::clicked, this, &MainWindow::on_searchList_clicked);
-
     connect(process, QOverload<int, QProcess::ExitStatus>::of(&QProcess::finished), this, &MainWindow::onLyricsFetched);
     connect(lyricsView, &Lyrics::backLyricsClicked, this, &MainWindow::on_backButton_clicked);
+    connect(liked, &Liked::backLikedClicked, this, &MainWindow::on_backButton_clicked);
 
     listModel->setStringList(spotifyData->getTrackNames());
     ui->searchLine->setPlaceholderText("Search...");
-    ui->searchLine->setStyleSheet("border: 1px solid black;border-radius: 5px;background-color: #717072;color:white;");
-
+    ui->searchLine->setStyleSheet("QLineEdit { padding: 5px; border: 1px solid gray; border-radius: 5px; }");
     ui->searchList->setStyleSheet("QListView { padding: 5px; border: 1px solid gray; border-radius: 5px; }");
-    ui->likedButton->setStyleSheet("QPushButton:!hover{border: 1px solid black;border-radius: 5px;background-color: #717072;color:white;}"
-                                  "QPushButton:hover{border: 1px solid black;border-radius: 5px;background-color: #33322e;color:#c0c0c0;}");
 
     stackedWidget->addWidget(ui->centralwidget);
     stackedWidget->addWidget(lyricsView);
+    stackedWidget->addWidget(liked);
     setCentralWidget(stackedWidget);
 }
 
@@ -72,7 +73,16 @@ MainWindow::~MainWindow()
 
 void MainWindow::showUsername(const QString &username)
 {
+    this->username = username;
     ui->userLabel->setText("User: " + username);
+    if (trackView) {
+        trackView->setUsername(username);
+    }
+
+    if (liked) {
+        liked->loadPlaylist(username);
+    }
+    qDebug() << username;
 }
 
 void MainWindow::showTracks(const QStringList &trackNames)
@@ -91,7 +101,8 @@ QStringList MainWindow::getTrackNames(const QList<QList<QString>> &filteredData)
 {
     QStringList trackNames;
     for (const auto &row : filteredData) {
-        QString trackWithArtist = row[static_cast<int>(COLUMNS::artist_name)] + " - " + row[static_cast<int>(COLUMNS::track_name)];
+        QString trackWithArtist = row[static_cast<int>(COLUMNS::artist_name)] + " - "
+                                  + row[static_cast<int>(COLUMNS::track_name)];
         trackNames << trackWithArtist;
     }
     return trackNames;
@@ -243,12 +254,17 @@ void MainWindow::on_edmButton_clicked()
 
 void MainWindow::fetchLyrics(const QString &artistName, const QString &songName)
 {
+    QTemporaryFile tempScript;
+    if (tempScript.open()) {
+        QFile::copy(":/parser/parser.py", tempScript.fileName());
+        tempScript.setPermissions(QFile::ExeOwner | QFile::ReadOwner | QFile::WriteOwner);
+    }
+
     QStringList arguments;
     arguments << artistName << songName;
 
     qDebug() << "Fetching lyrics for:" << artistName << "-" << songName;
-    process->start("sh",
-                   QStringList() << "/Users/ivanovmichael/PycharmProjects/parser/run.sh" << arguments);
+    process->start("sh", QStringList() << tempScript.fileName() << arguments);
     process->waitForFinished();
     qDebug() << "Results: "
              << "/n" << process->readAllStandardOutput();
@@ -259,15 +275,16 @@ void MainWindow::on_searchLine_textChanged(const QString &text)
     searchModel->clear();
     if (text.isEmpty()) {
         ui->searchList->setVisible(false);
-    } else {
+    } else
+    {
         for (const auto &row : spotifyData->data) {
             if (row[static_cast<int>(COLUMNS::track_name)].contains(text, Qt::CaseInsensitive)) {
                 QString displayText = row[static_cast<int>(COLUMNS::track_name)];
                 searchModel->appendRow(new QStandardItem(displayText));
                 ui->searchList->setModel(searchModel);
             }
+            ui->searchList->setVisible(true);
         }
-        ui->searchList->setVisible(true);
     }
 }
 
@@ -283,9 +300,6 @@ void MainWindow::on_searchList_clicked(const QModelIndex &index)
         }
     }
 
-    currentArtist = artistName;
-    currentTrack = trackName;
-
     fetchLyrics(artistName, trackName);
 }
 
@@ -297,16 +311,12 @@ void MainWindow::onLyricsFetched(int exitCode, QProcess::ExitStatus exitStatus)
         QString lyrics = process->readAllStandardOutput();
         qDebug() << "Lyrics fetched:" << lyrics;
 
-        QString header = currentArtist + " - " + currentTrack;
-
-        lyricsView->setHeaderAndLyrics(header, lyrics);
-
+        lyricsView->setLyrics(lyrics);
         stackedWidget->setCurrentWidget(lyricsView);
-    } else {
         QString errorOutput = process->readAllStandardError();
         qDebug() << "Failed to fetch lyrics. Error:" << errorOutput;
 
-        QMessageBox::critical(this, "Error", "Failed to fetch lyrics");
+        // QMessageBox::critical(this, "Error", "Failed to fetch lyrics");
     }
 }
 
@@ -315,7 +325,17 @@ void MainWindow::on_backButton_clicked()
     stackedWidget->setCurrentWidget(ui->centralwidget);
 }
 
-void MainWindow::on_lyricsBack_clicked()
+void MainWindow::on_likedButton_clicked()
 {
-    this->show();
+    if (!liked) {
+        stackedWidget->addWidget(liked);
+    }
+    liked->loadPlaylist(username);
+    liked->show();
+    stackedWidget->setCurrentWidget(liked);
+}
+
+void MainWindow::on_backLiked_clicked()
+{
+    stackedWidget->setCurrentWidget(ui->centralwidget);
 }
