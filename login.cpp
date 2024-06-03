@@ -45,6 +45,7 @@ void Login::on_loginButton_clicked()
     password = QString(QCryptographicHash::hash(password.toUtf8(), QCryptographicHash::Blake2b_256).toHex());
     if (!database.isOpen()) {
         qDebug() << "Failed to open the database";
+        emit signUpSuccess();
         return;
     }
 
