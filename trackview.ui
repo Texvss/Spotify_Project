@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>1184</width>
-    <height>542</height>
+    <height>802</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -70,6 +70,10 @@
                <width>50</width>
                <height>30</height>
               </size>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">QPushButton:!hover{border: 1px solid black;border-radius: 5px;background-color: #b83030;color:white;}
+ QPushButton:hover{border: 1px solid black;border-radius: 5px;background-color: #3d010e;color:#c0c0c0;}</string>
              </property>
              <property name="text">
               <string>Back</string>

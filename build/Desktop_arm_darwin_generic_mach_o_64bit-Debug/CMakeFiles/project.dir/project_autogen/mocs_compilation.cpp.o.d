@@ -2,10 +2,9 @@ CMakeFiles/project.dir/project_autogen/mocs_compilation.cpp.o: \
   /Users/mansur/Desktop/Spotify_projectMisha/build/Desktop_arm_darwin_generic_mach_o_64bit-Debug/project_autogen/mocs_compilation.cpp \
   /Users/mansur/Desktop/Spotify_projectMisha/build/Desktop_arm_darwin_generic_mach_o_64bit-Debug/project_autogen/EWIEGA46WW/moc_liked.cpp \
   /Users/mansur/Desktop/Spotify_projectMisha/build/Desktop_arm_darwin_generic_mach_o_64bit-Debug/project_autogen/EWIEGA46WW/../../../../liked.h \
-  /opt/homebrew/lib/QtWidgets.framework/Headers/QWidget \
-  /opt/homebrew/lib/QtWidgets.framework/Headers/qwidget.h \
-  /opt/homebrew/include/QtWidgets/qtwidgetsglobal.h \
-  /opt/homebrew/include/QtGui/qtguiglobal.h \
+  /opt/homebrew/lib/QtSql.framework/Headers/QSqlDatabase \
+  /opt/homebrew/lib/QtSql.framework/Headers/qsqldatabase.h \
+  /opt/homebrew/include/QtSql/qtsqlglobal.h \
   /opt/homebrew/include/QtCore/qglobal.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/type_traits \
   /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__assert \
@@ -538,17 +537,8 @@ CMakeFiles/project.dir/project_autogen/mocs_compilation.cpp.o: \
   /opt/homebrew/include/QtCore/qtresource.h \
   /opt/homebrew/include/QtCore/qttranslation.h \
   /opt/homebrew/include/QtCore/qversiontagging.h \
-  /opt/homebrew/include/QtGui/qtgui-config.h \
-  /opt/homebrew/include/QtGui/qtguiexports.h \
-  /opt/homebrew/include/QtWidgets/qtwidgets-config.h \
-  /opt/homebrew/include/QtWidgets/qtwidgetsexports.h \
-  /opt/homebrew/include/QtGui/qwindowdefs.h \
-  /opt/homebrew/include/QtCore/qobjectdefs.h \
-  /opt/homebrew/include/QtCore/qnamespace.h \
-  /opt/homebrew/include/QtCore/qtmetamacros.h \
-  /opt/homebrew/include/QtCore/qobjectdefs_impl.h \
-  /opt/homebrew/include/QtCore/qfunctionaltools_impl.h \
-  /opt/homebrew/include/QtCore/qobject.h \
+  /opt/homebrew/include/QtSql/qtsql-config.h \
+  /opt/homebrew/include/QtSql/qtsqlexports.h \
   /opt/homebrew/include/QtCore/qstring.h \
   /opt/homebrew/include/QtCore/qchar.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/functional \
@@ -942,6 +932,8 @@ CMakeFiles/project.dir/project_autogen/mocs_compilation.cpp.o: \
   /opt/homebrew/include/QtCore/qstringview.h \
   /opt/homebrew/include/QtCore/qbytearray.h \
   /opt/homebrew/include/QtCore/qrefcount.h \
+  /opt/homebrew/include/QtCore/qnamespace.h \
+  /opt/homebrew/include/QtCore/qtmetamacros.h \
   /opt/homebrew/include/QtCore/qarraydata.h \
   /opt/homebrew/include/QtCore/qpair.h \
   /opt/homebrew/include/QtCore/qarraydatapointer.h \
@@ -963,6 +955,24 @@ CMakeFiles/project.dir/project_autogen/mocs_compilation.cpp.o: \
   /opt/homebrew/include/QtCore/qstringbuilder.h \
   /opt/homebrew/include/QtCore/qstringconverter.h \
   /opt/homebrew/include/QtCore/qstringconverter_base.h \
+  /opt/homebrew/lib/QtWidgets.framework/Headers/QTableWidget \
+  /opt/homebrew/lib/QtWidgets.framework/Headers/qtablewidget.h \
+  /opt/homebrew/include/QtWidgets/qtableview.h \
+  /opt/homebrew/include/QtWidgets/qtwidgetsglobal.h \
+  /opt/homebrew/include/QtGui/qtguiglobal.h \
+  /opt/homebrew/include/QtGui/qtgui-config.h \
+  /opt/homebrew/include/QtGui/qtguiexports.h \
+  /opt/homebrew/include/QtWidgets/qtwidgets-config.h \
+  /opt/homebrew/include/QtWidgets/qtwidgetsexports.h \
+  /opt/homebrew/include/QtWidgets/qabstractitemview.h \
+  /opt/homebrew/include/QtWidgets/qabstractscrollarea.h \
+  /opt/homebrew/include/QtWidgets/qframe.h \
+  /opt/homebrew/include/QtWidgets/qwidget.h \
+  /opt/homebrew/include/QtGui/qwindowdefs.h \
+  /opt/homebrew/include/QtCore/qobjectdefs.h \
+  /opt/homebrew/include/QtCore/qobjectdefs_impl.h \
+  /opt/homebrew/include/QtCore/qfunctionaltools_impl.h \
+  /opt/homebrew/include/QtCore/qobject.h \
   /opt/homebrew/include/QtCore/qlist.h \
   /opt/homebrew/include/QtCore/qhashfunctions.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/numeric \
@@ -1058,13 +1068,6 @@ CMakeFiles/project.dir/project_autogen/mocs_compilation.cpp.o: \
   /opt/homebrew/include/QtWidgets/qsizepolicy.h \
   /opt/homebrew/include/QtGui/qcursor.h \
   /opt/homebrew/include/QtGui/qbitmap.h \
-  /opt/homebrew/lib/QtWidgets.framework/Headers/QTableWidget \
-  /opt/homebrew/lib/QtWidgets.framework/Headers/qtablewidget.h \
-  /opt/homebrew/include/QtWidgets/qtableview.h \
-  /opt/homebrew/include/QtWidgets/qabstractitemview.h \
-  /opt/homebrew/include/QtWidgets/qabstractscrollarea.h \
-  /opt/homebrew/include/QtWidgets/qframe.h \
-  /opt/homebrew/include/QtWidgets/qwidget.h \
   /opt/homebrew/include/QtCore/qabstractitemmodel.h \
   /opt/homebrew/include/QtCore/qitemselectionmodel.h \
   /opt/homebrew/include/QtWidgets/qabstractitemdelegate.h \
@@ -1079,11 +1082,8 @@ CMakeFiles/project.dir/project_autogen/mocs_compilation.cpp.o: \
   /opt/homebrew/include/QtWidgets/qtabbar.h \
   /opt/homebrew/include/QtWidgets/qtabwidget.h \
   /opt/homebrew/include/QtWidgets/qrubberband.h \
-  /opt/homebrew/lib/QtSql.framework/Headers/QSqlDatabase \
-  /opt/homebrew/lib/QtSql.framework/Headers/qsqldatabase.h \
-  /opt/homebrew/include/QtSql/qtsqlglobal.h \
-  /opt/homebrew/include/QtSql/qtsql-config.h \
-  /opt/homebrew/include/QtSql/qtsqlexports.h \
+  /opt/homebrew/lib/QtWidgets.framework/Headers/QWidget \
+  /opt/homebrew/lib/QtWidgets.framework/Headers/qwidget.h \
   /opt/homebrew/lib/QtSql.framework/Headers/QtSql \
   /opt/homebrew/include/QtSql/QtSqlDepends \
   /opt/homebrew/include/QtCore/QtCore \
@@ -1499,14 +1499,16 @@ CMakeFiles/project.dir/project_autogen/mocs_compilation.cpp.o: \
   /Users/mansur/Desktop/Spotify_projectMisha/build/Desktop_arm_darwin_generic_mach_o_64bit-Debug/project_autogen/EWIEGA46WW/../../../../mainwindow.h \
   /opt/homebrew/lib/QtWidgets.framework/Headers/QMainWindow \
   /opt/homebrew/lib/QtWidgets.framework/Headers/qmainwindow.h \
+  /opt/homebrew/lib/QtCore.framework/Headers/QProcess \
   /opt/homebrew/lib/QtWidgets.framework/Headers/QStackedWidget \
   /opt/homebrew/lib/QtWidgets.framework/Headers/qstackedwidget.h \
+  /opt/homebrew/lib/QtGui.framework/Headers/QStandardItemModel \
+  /opt/homebrew/lib/QtGui.framework/Headers/qstandarditemmodel.h \
+  /Users/mansur/Desktop/Spotify_projectMisha/login.h \
+  /Users/mansur/Desktop/Spotify_projectMisha/lyrics.h \
   /Users/mansur/Desktop/Spotify_projectMisha/spotify.h \
   /opt/homebrew/lib/QtCore.framework/Headers/QList \
   /opt/homebrew/lib/QtCore.framework/Headers/QString \
   /opt/homebrew/lib/QtCore.framework/Headers/QStringList \
-  /Users/mansur/Desktop/Spotify_projectMisha/lyrics.h \
-  /opt/homebrew/lib/QtCore.framework/Headers/QProcess \
-  /Users/mansur/Desktop/Spotify_projectMisha/login.h \
   /Users/mansur/Desktop/Spotify_projectMisha/build/Desktop_arm_darwin_generic_mach_o_64bit-Debug/project_autogen/EWIEGA46WW/moc_trackview.cpp \
   /Users/mansur/Desktop/Spotify_projectMisha/build/Desktop_arm_darwin_generic_mach_o_64bit-Debug/project_autogen/EWIEGA46WW/../../../../trackview.h

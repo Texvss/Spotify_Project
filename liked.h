@@ -25,6 +25,7 @@ signals:
 private slots:
     void on_backLiked_clicked();
 
+
 private:
     Ui::Liked *ui;
     QSqlDatabase database;
@@ -35,3 +36,4 @@ private:
 };
 
 #endif // LIKED_H
+

@@ -371,6 +371,7 @@
   /opt/homebrew/Cellar/qt/6.7.0_1/lib/QtCore.framework/Versions/A/Headers/qxpfunctional.h \
   /opt/homebrew/Cellar/qt/6.7.0_1/lib/QtCore.framework/Versions/A/Headers/qxptype_traits.h \
   /opt/homebrew/Cellar/qt/6.7.0_1/lib/QtCore.framework/Versions/A/Headers/qyieldcpu.h \
+  /opt/homebrew/Cellar/qt/6.7.0_1/lib/QtGui.framework/Versions/A/Headers/QStandardItemModel \
   /opt/homebrew/Cellar/qt/6.7.0_1/lib/QtGui.framework/Versions/A/Headers/qaction.h \
   /opt/homebrew/Cellar/qt/6.7.0_1/lib/QtGui.framework/Versions/A/Headers/qbitmap.h \
   /opt/homebrew/Cellar/qt/6.7.0_1/lib/QtGui.framework/Versions/A/Headers/qbrush.h \
@@ -390,6 +391,7 @@
   /opt/homebrew/Cellar/qt/6.7.0_1/lib/QtGui.framework/Versions/A/Headers/qregion.h \
   /opt/homebrew/Cellar/qt/6.7.0_1/lib/QtGui.framework/Versions/A/Headers/qrgb.h \
   /opt/homebrew/Cellar/qt/6.7.0_1/lib/QtGui.framework/Versions/A/Headers/qrgba64.h \
+  /opt/homebrew/Cellar/qt/6.7.0_1/lib/QtGui.framework/Versions/A/Headers/qstandarditemmodel.h \
   /opt/homebrew/Cellar/qt/6.7.0_1/lib/QtGui.framework/Versions/A/Headers/qtgui-config.h \
   /opt/homebrew/Cellar/qt/6.7.0_1/lib/QtGui.framework/Versions/A/Headers/qtguiexports.h \
   /opt/homebrew/Cellar/qt/6.7.0_1/lib/QtGui.framework/Versions/A/Headers/qtguiglobal.h \

@@ -33,18 +33,24 @@ Login::Login(QWidget *parent)
     }
     database = QSqlDatabase::addDatabase("QSQLITE");
     database.setDatabaseName(dbPath);
-
     if (!database.open()) {
         ui->CheBu->setStyleSheet(
             "background-color:#b83030;border: 1px solid black;border-radius: 10px;");
+
         qDebug() << "Failed to open the database at " << dbPath;
         QMessageBox::critical(this, "Error", "Failed to open the database at " + dbPath);
     } else {
         ui->CheBu->setStyleSheet(
             "background-color:#016e0e;border: 1px solid black;border-radius: 10px;");
         qDebug() << "Database opened successfully at " << dbPath;
+
+//     } else {
+//         ui->CheBu->setStyleSheet(
+//             "background-color:#016e0e;border: 1px solid black;border-radius: 10px;");
+
     }
 }
+
 
 Login::~Login()
 {
@@ -87,7 +93,8 @@ void Login::on_signupButton_clicked()
 {
     QString username = ui->usernameLine->text();
     QString password = ui->passwordLine->text();
-    QString hashedPassword = QString(QCryptographicHash::hash(password.toUtf8(), QCryptographicHash::Blake2b_256).toHex());
+    password = QString(QCryptographicHash::hash(password.toUtf8(), QCryptographicHash::Blake2b_256).toHex());
+
 
     if (!database.isOpen()) {
         qDebug() << "Failed to open the database";
@@ -98,7 +105,7 @@ void Login::on_signupButton_clicked()
     QSqlQuery qry;
     qry.prepare("INSERT INTO users (username, password) VALUES (:username, :password)");
     qry.bindValue(":username", username);
-    qry.bindValue(":password", hashedPassword);
+    qry.bindValue(":password", password);
 
     if (qry.exec()) {
         ui->label->setText("Sign up successful!");

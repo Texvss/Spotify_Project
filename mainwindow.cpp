@@ -3,13 +3,13 @@
 #include <QRegularExpression>
 #include <QRegularExpressionMatch>
 #include <QDir>
+#include <QTemporaryFile>
 #include "./ui_mainwindow.h"
 #include "lyrics.h"
 #include "spotify.h"
 #include "trackview.h"
 
-
-const QString path = ":/data/playlist_2010to20222Ars.csv";
+QString path = ":/data/playlist_2010to20222Ars.csv";
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
@@ -52,11 +52,12 @@ MainWindow::MainWindow(QWidget *parent)
 
     listModel->setStringList(spotifyData->getTrackNames());
     ui->searchLine->setPlaceholderText("Search...");
-    ui->searchLine->setStyleSheet("border: 1px solid black;border-radius: 5px;background-color: #717072;color:white;");
-
+    ui->searchLine->setStyleSheet("QLineEdit { padding: 5px; border: 1px solid gray; border-radius: 5px; }");
     ui->searchList->setStyleSheet("QListView { padding: 5px; border: 1px solid gray; border-radius: 5px; }");
+
     ui->likedButton->setStyleSheet("QPushButton:!hover{border: 1px solid black;border-radius: 5px;background-color: #717072;color:white;}"
                                    "QPushButton:hover{border: 1px solid black;border-radius: 5px;background-color: #33322e;color:#c0c0c0;}");
+
 
     stackedWidget->addWidget(ui->centralwidget);
     stackedWidget->addWidget(lyricsView);
@@ -84,8 +85,8 @@ void MainWindow::showUsername(const QString &username)
     if (trackView) {
         trackView->setUsername(username);
     }
-
-    if (liked) {
+    if (liked)
+    {
         liked->loadPlaylist(username);
     }
     qDebug() << username;
@@ -272,6 +273,12 @@ void MainWindow::on_edmButton_clicked()
 
 void MainWindow::fetchLyrics(const QString &artistName, const QString &songName)
 {
+    QTemporaryFile tempScript;
+    if (tempScript.open()) {
+        QFile::copy(":/parser/parser.py", tempScript.fileName());
+        tempScript.setPermissions(QFile::ExeOwner | QFile::ReadOwner | QFile::WriteOwner);
+    }
+
     QStringList arguments;
     arguments << artistName << songName.split("-");
 
@@ -383,6 +390,7 @@ void MainWindow::onLyricsFetched(int exitCode, QProcess::ExitStatus exitStatus)
 
     if (exitStatus == QProcess::NormalExit && exitCode == 0) {
         QString lyrics = process->readAllStandardOutput();
+
 
         lyricsView->setLyrics(lyrics);
         stackedWidget->setCurrentWidget(lyricsView);

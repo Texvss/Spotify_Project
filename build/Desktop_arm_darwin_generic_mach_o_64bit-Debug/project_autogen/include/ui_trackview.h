@@ -43,7 +43,7 @@ public:
     {
         if (TrackView->objectName().isEmpty())
             TrackView->setObjectName("TrackView");
-        TrackView->resize(1184, 542);
+        TrackView->resize(1184, 802);
         TrackView->setStyleSheet(QString::fromUtf8("background: qlineargradient(x1:0, y1:0, x2:0, y2:1, stop:0 #404040, stop:1 #000000);"));
         horizontalLayout_3 = new QHBoxLayout(TrackView);
         horizontalLayout_3->setObjectName("horizontalLayout_3");
@@ -67,6 +67,8 @@ public:
         backButton->setObjectName("backButton");
         backButton->setMinimumSize(QSize(50, 30));
         backButton->setMaximumSize(QSize(50, 30));
+        backButton->setStyleSheet(QString::fromUtf8("QPushButton:!hover{border: 1px solid black;border-radius: 5px;background-color: #b83030;color:white;}\n"
+" QPushButton:hover{border: 1px solid black;border-radius: 5px;background-color: #3d010e;color:#c0c0c0;}"));
 
         verticalLayout_2->addWidget(backButton);
 

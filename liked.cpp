@@ -15,6 +15,10 @@ Liked::Liked(QWidget *parent)
                                   "QPushButton:hover{border: 1px solid black;border-radius: 5px;background-color: #3d010e;color:#c0c0c0;}");
 
     // ui->likedTracks->setFixedSize(350, 500);
+
+
+
+    // ui->likedTracks->setFixedSize(350, 500);
     ui->likedTracks->horizontalHeader()->setSectionResizeMode(QHeaderView::ResizeToContents);
     ui->likedTracks->verticalHeader()->setSectionResizeMode(QHeaderView::ResizeToContents);
     ui->likedTracks->setColumnCount(2);
@@ -118,8 +122,10 @@ void Liked::addTrack(const QString &trackName, const QString &artistName, const 
 {
     int row = ui->likedTracks->rowCount();
     ui->likedTracks->insertRow(row);
-    ui->likedTracks->setItem(row, 0, new QTableWidgetItem(artistName));
-    ui->likedTracks->setItem(row, 1, new QTableWidgetItem(trackName));
+    // ui->likedTracks->setItem(row, 0, new QTableWidgetItem(artistName));
+    // ui->likedTracks->setItem(row, 1, new QTableWidgetItem(trackName));
+    ui->likedTracks->setItem(row, 0, new QTableWidgetItem(trackName));
+    ui->likedTracks->setItem(row, 1, new QTableWidgetItem(artistName));
     saveTrackToDatabase(username, trackName, artistName);
 }
 
