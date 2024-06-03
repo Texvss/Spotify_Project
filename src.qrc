@@ -1,6 +1,8 @@
 <RCC>
     <qresource prefix="/data">
         <file>spotifyProject_DB.db</file>
+        <file>parser.py</file>
+        <file>playlist_2010to20222Ars.csv</file>
     </qresource>
     <qresource prefix="/pictures">
         <file>can_pop_button.png</file>

@@ -84,6 +84,14 @@ endif()
 # target_include_directories(project PRIVATE ${CMAKE_CURRENT_SOURCE_DIR})
 target_link_libraries(project PRIVATE Qt${QT_VERSION_MAJOR}::Widgets Qt${QT_VERSION_MAJOR}::Core Qt${QT_VERSION_MAJOR}::Gui Qt${QT_VERSION_MAJOR}::Sql)
 
+
+add_custom_command(
+    TARGET ${PROJECT_NAME} POST_BUILD
+    COMMAND ${CMAKE_COMMAND} -E copy_if_different
+        ${PROJECT_SOURCE_DIR}/anotherDraft.db
+        $<TARGET_FILE_DIR:${PROJECT_NAME}>
+)
+
 target_include_directories(project PRIVATE ${CMAKE_CURRENT_SOURCE_DIR})
 
 # Qt for iOS sets MACOSX_BUNDLE_GUI_IDENTIFIER automatically since Qt 6.1.

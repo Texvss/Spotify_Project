@@ -1,0 +1,9 @@
+/Users/mansur/Desktop/Spotify_projectMisha/build/Desktop_arm_darwin_generic_mach_o_64bit-Release/CMakeFiles/project.dir
+/Users/mansur/Desktop/Spotify_projectMisha/build/Desktop_arm_darwin_generic_mach_o_64bit-Release/CMakeFiles/edit_cache.dir
+/Users/mansur/Desktop/Spotify_projectMisha/build/Desktop_arm_darwin_generic_mach_o_64bit-Release/CMakeFiles/rebuild_cache.dir
+/Users/mansur/Desktop/Spotify_projectMisha/build/Desktop_arm_darwin_generic_mach_o_64bit-Release/CMakeFiles/list_install_components.dir
+/Users/mansur/Desktop/Spotify_projectMisha/build/Desktop_arm_darwin_generic_mach_o_64bit-Release/CMakeFiles/install.dir
+/Users/mansur/Desktop/Spotify_projectMisha/build/Desktop_arm_darwin_generic_mach_o_64bit-Release/CMakeFiles/install/local.dir
+/Users/mansur/Desktop/Spotify_projectMisha/build/Desktop_arm_darwin_generic_mach_o_64bit-Release/CMakeFiles/install/strip.dir
+/Users/mansur/Desktop/Spotify_projectMisha/build/Desktop_arm_darwin_generic_mach_o_64bit-Release/CMakeFiles/project_autogen_timestamp_deps.dir
+/Users/mansur/Desktop/Spotify_projectMisha/build/Desktop_arm_darwin_generic_mach_o_64bit-Release/CMakeFiles/project_autogen.dir
