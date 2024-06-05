@@ -36,7 +36,10 @@ enum class COLUMNS {
 class Spotify
 {
 public:
+
     Spotify(const QString & = ":/data/clusters_50.csv");
+
+
     QList<QString> operator[](int i);
     QStringList getTrackNames() const;
     QList<QList<QString>> filterByGenre(const QString &genre) const;

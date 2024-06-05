@@ -1057,6 +1057,36 @@ CMakeFiles/project.dir/main.cpp.o: \
   /opt/homebrew/include/QtCore/qlocale.h \
   /opt/homebrew/include/QtCore/qvariant.h \
   /opt/homebrew/include/QtGui/qguiapplication_platform.h \
+<<<<<<< HEAD
+=======
+  /opt/homebrew/lib/QtCore.framework/Headers/QFile \
+  /opt/homebrew/lib/QtCore.framework/Headers/qfile.h \
+  /opt/homebrew/include/QtCore/qfiledevice.h \
+  /opt/homebrew/include/QtCore/qiodevice.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/filesystem \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__filesystem/copy_options.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__filesystem/directory_entry.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__filesystem/file_status.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__filesystem/file_type.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__filesystem/perms.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__filesystem/file_time_type.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__filesystem/filesystem_error.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__filesystem/path.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/iomanip \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/istream \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/ostream \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/bitset \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__filesystem/operations.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__filesystem/perm_options.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__filesystem/space_info.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__filesystem/directory_iterator.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__filesystem/directory_options.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__filesystem/path_iterator.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__filesystem/recursive_directory_iterator.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__filesystem/u8path.h \
+  /opt/homebrew/lib/QtCore.framework/Headers/QStandardPaths \
+  /opt/homebrew/lib/QtCore.framework/Headers/qstandardpaths.h \
+>>>>>>> 3dd9605dfa16e71ca2e8e58a293a1c4b9d8bd69a
   /Users/mansur/Desktop/Spotify_projectMisha/login.h \
   /opt/homebrew/lib/QtSql.framework/Headers/QSqlDatabase \
   /opt/homebrew/lib/QtSql.framework/Headers/qsqldatabase.h \
@@ -1145,7 +1175,10 @@ CMakeFiles/project.dir/main.cpp.o: \
   /opt/homebrew/lib/QtCore.framework/Headers/qbindingstorage.h \
   /opt/homebrew/lib/QtCore.framework/Headers/qbitarray.h \
   /opt/homebrew/lib/QtCore.framework/Headers/qbuffer.h \
+<<<<<<< HEAD
   /opt/homebrew/include/QtCore/qiodevice.h \
+=======
+>>>>>>> 3dd9605dfa16e71ca2e8e58a293a1c4b9d8bd69a
   /opt/homebrew/lib/QtCore.framework/Headers/qbytearray.h \
   /opt/homebrew/lib/QtCore.framework/Headers/qbytearrayalgorithms.h \
   /opt/homebrew/lib/QtCore.framework/Headers/qbytearraylist.h \
@@ -1191,6 +1224,7 @@ CMakeFiles/project.dir/main.cpp.o: \
   /opt/homebrew/lib/QtCore.framework/Headers/qdebug.h \
   /opt/homebrew/lib/QtCore.framework/Headers/qdir.h \
   /opt/homebrew/include/QtCore/qfile.h \
+<<<<<<< HEAD
   /opt/homebrew/include/QtCore/qfiledevice.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/filesystem \
   /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__filesystem/copy_options.h \
@@ -1213,6 +1247,8 @@ CMakeFiles/project.dir/main.cpp.o: \
   /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__filesystem/path_iterator.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__filesystem/recursive_directory_iterator.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__filesystem/u8path.h \
+=======
+>>>>>>> 3dd9605dfa16e71ca2e8e58a293a1c4b9d8bd69a
   /opt/homebrew/include/QtCore/qfileinfo.h \
   /opt/homebrew/include/QtCore/qtimezone.h \
   /opt/homebrew/lib/QtCore.framework/Headers/qdiriterator.h \
@@ -1224,7 +1260,10 @@ CMakeFiles/project.dir/main.cpp.o: \
   /opt/homebrew/lib/QtCore.framework/Headers/qexception.h \
   /opt/homebrew/lib/QtCore.framework/Headers/qexceptionhandling.h \
   /opt/homebrew/lib/QtCore.framework/Headers/qfactoryinterface.h \
+<<<<<<< HEAD
   /opt/homebrew/lib/QtCore.framework/Headers/qfile.h \
+=======
+>>>>>>> 3dd9605dfa16e71ca2e8e58a293a1c4b9d8bd69a
   /opt/homebrew/lib/QtCore.framework/Headers/qfiledevice.h \
   /opt/homebrew/lib/QtCore.framework/Headers/qfileinfo.h \
   /opt/homebrew/lib/QtCore.framework/Headers/qfileselector.h \
@@ -1394,7 +1433,10 @@ CMakeFiles/project.dir/main.cpp.o: \
   /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/cassert \
   /opt/homebrew/include/QtCore/q20iterator.h \
   /opt/homebrew/lib/QtCore.framework/Headers/qstack.h \
+<<<<<<< HEAD
   /opt/homebrew/lib/QtCore.framework/Headers/qstandardpaths.h \
+=======
+>>>>>>> 3dd9605dfa16e71ca2e8e58a293a1c4b9d8bd69a
   /opt/homebrew/lib/QtCore.framework/Headers/qstaticlatin1stringmatcher.h \
   /opt/homebrew/include/QtCore/qlatin1stringmatcher.h \
   /opt/homebrew/lib/QtCore.framework/Headers/qstorageinfo.h \
@@ -1500,10 +1542,19 @@ CMakeFiles/project.dir/main.cpp.o: \
   /opt/homebrew/lib/QtCore.framework/Headers/QProcess \
   /opt/homebrew/lib/QtWidgets.framework/Headers/QStackedWidget \
   /opt/homebrew/lib/QtWidgets.framework/Headers/qstackedwidget.h \
+<<<<<<< HEAD
+=======
+  /opt/homebrew/lib/QtGui.framework/Headers/QStandardItemModel \
+  /opt/homebrew/lib/QtGui.framework/Headers/qstandarditemmodel.h \
+>>>>>>> 3dd9605dfa16e71ca2e8e58a293a1c4b9d8bd69a
   /Users/mansur/Desktop/Spotify_projectMisha/lyrics.h \
   /Users/mansur/Desktop/Spotify_projectMisha/spotify.h \
   /opt/homebrew/lib/QtCore.framework/Headers/QList \
   /opt/homebrew/lib/QtCore.framework/Headers/QString \
+<<<<<<< HEAD
   /opt/homebrew/lib/QtCore.framework/Headers/QStringList \
   /opt/homebrew/lib/QtGui.framework/Headers/QStandardItemModel \
   /opt/homebrew/lib/QtGui.framework/Headers/qstandarditemmodel.h
+=======
+  /opt/homebrew/lib/QtCore.framework/Headers/QStringList
+>>>>>>> 3dd9605dfa16e71ca2e8e58a293a1c4b9d8bd69a

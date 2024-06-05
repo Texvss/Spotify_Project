@@ -30,13 +30,21 @@ CMAKE_COLOR_DIAGNOSTICS:BOOL=1
 CMAKE_CXX_COMPILER:STRING=/usr/bin/clang++
 
 //Flags used by the CXX compiler during all build types.
+<<<<<<< HEAD
 CMAKE_CXX_FLAGS:STRING=-DQT_QML_DEBUG
+=======
+CMAKE_CXX_FLAGS:STRING=
+>>>>>>> 3dd9605dfa16e71ca2e8e58a293a1c4b9d8bd69a
 
 //Flags used by the CXX compiler during DEBUG builds.
 CMAKE_CXX_FLAGS_DEBUG:STRING=-g
 
 //No help, variable specified on the command line.
+<<<<<<< HEAD
 CMAKE_CXX_FLAGS_INIT:STRING=-DQT_QML_DEBUG
+=======
+CMAKE_CXX_FLAGS_INIT:STRING=
+>>>>>>> 3dd9605dfa16e71ca2e8e58a293a1c4b9d8bd69a
 
 //Flags used by the CXX compiler during MINSIZEREL builds.
 CMAKE_CXX_FLAGS_MINSIZEREL:STRING=-Os -DNDEBUG

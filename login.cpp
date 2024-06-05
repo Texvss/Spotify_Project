@@ -1,6 +1,7 @@
 #include "login.h"
 #include <QCryptographicHash>
 #include <QMessageBox>
+#include <QDir>
 #include "ui_login.h"
 #include "liked.h"
 #include "mainwindow.h"
@@ -20,15 +21,32 @@ Login::Login(QWidget *parent)
                                     "QPushButton:hover{border: 1px solid black;border-radius: "
                                     "5px;background-color: #33322e;color:#c0c0c0;}");
 
-    database = QSqlDatabase::addDatabase("QSQLITE");
-    database.setDatabaseName("/Users/mansur/Desktop/anotherDraft.db");
+    QString appDirPath = QCoreApplication::applicationDirPath();
+    QString dbPath = QDir(appDirPath).filePath("anotherDraft.db");
 
+    QFile dbFile(dbPath);
+    if (!dbFile.exists()) {
+        qDebug() << "Database file does not exist at path: " << dbPath;
+        QMessageBox::critical(this, "Error", "Database file does not exist at path: " + dbPath);
+        return;
+    }
+    database = QSqlDatabase::addDatabase("QSQLITE");
+    database.setDatabaseName(dbPath);
     if (!database.open()) {
         ui->CheBu->setStyleSheet(
             "background-color:#b83030;border: 1px solid black;border-radius: 10px;");
+
+        qDebug() << "Failed to open the database at " << dbPath;
+        QMessageBox::critical(this, "Error", "Failed to open the database at " + dbPath);
     } else {
         ui->CheBu->setStyleSheet(
             "background-color:#016e0e;border: 1px solid black;border-radius: 10px;");
+        qDebug() << "Database opened successfully at " << dbPath;
+
+//     } else {
+//         ui->CheBu->setStyleSheet(
+//             "background-color:#016e0e;border: 1px solid black;border-radius: 10px;");
+
     }
 }
 
@@ -45,7 +63,6 @@ void Login::on_loginButton_clicked()
     password = QString(QCryptographicHash::hash(password.toUtf8(), QCryptographicHash::Blake2b_256).toHex());
     if (!database.isOpen()) {
         qDebug() << "Failed to open the database";
-        emit signUpSuccess();
         return;
     }
 
@@ -74,7 +91,9 @@ void Login::on_signupButton_clicked()
 {
     QString username = ui->usernameLine->text();
     QString password = ui->passwordLine->text();
-    QString hashedPassword = QString(QCryptographicHash::hash(password.toUtf8(), QCryptographicHash::Blake2b_256).toHex());
+    password = QString(QCryptographicHash::hash(password.toUtf8(), QCryptographicHash::Blake2b_256).toHex());
+
+
     if (!database.isOpen()) {
         qDebug() << "Failed to open the database";
         QMessageBox::critical(this, "Error", "Failed to open the database");
@@ -84,7 +103,7 @@ void Login::on_signupButton_clicked()
     QSqlQuery qry;
     qry.prepare("INSERT INTO users (username, password) VALUES (:username, :password)");
     qry.bindValue(":username", username);
-    qry.bindValue(":password", hashedPassword);
+    qry.bindValue(":password", password);
 
     if (qry.exec()) {
         ui->label->setText("Sign up successful!");

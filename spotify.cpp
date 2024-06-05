@@ -7,11 +7,10 @@ Spotify::Spotify(const QString &path)
     QFile file(path);
     if (file.open(QFile::ReadOnly | QFile::Text)) {
         QTextStream stream(&file);
-        QString line = stream.readLine(); // Read the header line
+        QString line = stream.readLine();
         while (!stream.atEnd()) {
             line = stream.readLine();
             QList<QString> list = line.split(";");
-            // Remove leading empty elements due to extra semicolon in header
             if (!list.isEmpty() && list.first().isEmpty()) {
                 list.removeFirst();
             }

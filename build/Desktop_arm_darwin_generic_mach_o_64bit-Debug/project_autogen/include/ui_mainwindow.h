@@ -185,6 +185,10 @@ public:
         searchList->setDragEnabled(true);
         searchList->setDragDropOverwriteMode(true);
         searchList->setAlternatingRowColors(true);
+<<<<<<< HEAD
+=======
+        searchList->setResizeMode(QListView::Fixed);
+>>>>>>> 3dd9605dfa16e71ca2e8e58a293a1c4b9d8bd69a
         searchList->setUniformItemSizes(true);
 
         horizontalLayout_3->addWidget(searchList);

@@ -19,7 +19,6 @@ public:
     void loadPlaylist(const QString &username);
     void addTrack(const QString &trackName, const QString &artistName, const QString &username);
 
-
 signals:
     void backLikedClicked();
 
@@ -31,7 +30,11 @@ private slots:
 private:
     Ui::Liked *ui;
     QSqlDatabase database;
-    void saveTrackToDatabase(const QString &username, const QString &trackName, const QString &artistName);
+
+    void saveTrackToDatabase(const QString &username,
+                             const QString &trackName,
+                             const QString &artistName);
+
     QString username;
 };
 

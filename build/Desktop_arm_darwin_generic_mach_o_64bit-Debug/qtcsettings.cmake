@@ -7,4 +7,8 @@ set("QT_QMAKE_EXECUTABLE" "/opt/homebrew/opt/qt/bin/qmake" CACHE "FILEPATH" "" F
 set("CMAKE_PREFIX_PATH" "/opt/homebrew" CACHE "PATH" "" FORCE)
 set("CMAKE_C_COMPILER" "/usr/bin/clang" CACHE "FILEPATH" "" FORCE)
 set("CMAKE_CXX_COMPILER" "/usr/bin/clang++" CACHE "FILEPATH" "" FORCE)
+<<<<<<< HEAD
 set("CMAKE_CXX_FLAGS_INIT" "-DQT_QML_DEBUG" CACHE "STRING" "" FORCE)
+=======
+set("CMAKE_CXX_FLAGS_INIT" "" CACHE "STRING" "" FORCE)
+>>>>>>> 3dd9605dfa16e71ca2e8e58a293a1c4b9d8bd69a

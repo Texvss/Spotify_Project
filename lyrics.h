@@ -8,9 +8,9 @@
 #include <QContextMenuEvent>
 #include "spotify.h"
 
-namespace Ui {
-class Lyrics;
-}
+QT_BEGIN_NAMESPACE
+namespace Ui { class Lyrics; }
+QT_END_NAMESPACE
 
 class Lyrics : public QWidget
 {
@@ -19,14 +19,9 @@ class Lyrics : public QWidget
 public:
     explicit Lyrics(QWidget *parent = nullptr, Spotify *spotify = nullptr);
     ~Lyrics();
-    void setLyrics(const QString &text);
+    void loadLyrics(const QString &artistName, const QString &songName);
     void updateSongList(int cluster);
     void showClusterForSong(const QString &artistName, const QString &songName);
-    void setHeaderAndLyrics(const QString &header, const QString &text);
-
-signals:
-    void backLyricsClicked();
-
 protected:
     void contextMenuEvent(QContextMenuEvent *event) override;
 

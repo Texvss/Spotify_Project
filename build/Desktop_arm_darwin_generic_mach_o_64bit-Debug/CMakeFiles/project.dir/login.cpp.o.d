@@ -1494,6 +1494,10 @@ CMakeFiles/project.dir/login.cpp.o: \
   /opt/homebrew/lib/QtWidgets.framework/Headers/qmessagebox.h \
   /opt/homebrew/include/QtWidgets/qdialog.h \
   /opt/homebrew/include/QtWidgets/qdialogbuttonbox.h \
+<<<<<<< HEAD
+=======
+  /opt/homebrew/lib/QtCore.framework/Headers/QDir \
+>>>>>>> 3dd9605dfa16e71ca2e8e58a293a1c4b9d8bd69a
   /Users/mansur/Desktop/Spotify_projectMisha/build/Desktop_arm_darwin_generic_mach_o_64bit-Debug/project_autogen/include/ui_login.h \
   /opt/homebrew/include/QtWidgets/QApplication \
   /opt/homebrew/lib/QtWidgets.framework/Headers/qapplication.h \
@@ -1529,10 +1533,19 @@ CMakeFiles/project.dir/login.cpp.o: \
   /opt/homebrew/lib/QtCore.framework/Headers/QProcess \
   /opt/homebrew/lib/QtWidgets.framework/Headers/QStackedWidget \
   /opt/homebrew/lib/QtWidgets.framework/Headers/qstackedwidget.h \
+<<<<<<< HEAD
+=======
+  /opt/homebrew/lib/QtGui.framework/Headers/QStandardItemModel \
+  /opt/homebrew/lib/QtGui.framework/Headers/qstandarditemmodel.h \
+>>>>>>> 3dd9605dfa16e71ca2e8e58a293a1c4b9d8bd69a
   /Users/mansur/Desktop/Spotify_projectMisha/lyrics.h \
   /Users/mansur/Desktop/Spotify_projectMisha/spotify.h \
   /opt/homebrew/lib/QtCore.framework/Headers/QList \
   /opt/homebrew/lib/QtCore.framework/Headers/QString \
+<<<<<<< HEAD
   /opt/homebrew/lib/QtCore.framework/Headers/QStringList \
   /opt/homebrew/lib/QtGui.framework/Headers/QStandardItemModel \
   /opt/homebrew/lib/QtGui.framework/Headers/qstandarditemmodel.h
+=======
+  /opt/homebrew/lib/QtCore.framework/Headers/QStringList
+>>>>>>> 3dd9605dfa16e71ca2e8e58a293a1c4b9d8bd69a

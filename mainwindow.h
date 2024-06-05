@@ -4,13 +4,14 @@
 #include <QMainWindow>
 #include <QProcess>
 #include <QStackedWidget>
+#include <QStandardItemModel>
 #include <QStringListModel>
 #include "liked.h"
 #include "login.h"
 #include "lyrics.h"
 #include "spotify.h"
 #include "trackview.h"
-#include <QStandardItemModel>
+
 
 QT_BEGIN_NAMESPACE
 namespace Ui {
@@ -53,11 +54,8 @@ private slots:
     void on_backLiked_clicked();
     //PARSER
     void fetchLyrics(const QString &artistName, const QString &songName);
-    void onLyricsFetched(int exitCode, QProcess::ExitStatus exitStatus);
     //AUTH
-    // void backLyricsClicked();
 
-    // void on_lyricsBack_clicked();
     // void on_searchButton_clicked();
     void on_likedButton_clicked();
 
@@ -72,8 +70,6 @@ private:
     TrackView *trackView;
     void showTracks(const QStringList &trackNames);
     QStringList getTrackNames(const QList<QList<QString>> &filteredData) const;
-    Lyrics *lyricsView;
-    QProcess *process;
     Login *login;
     Liked *liked;
     QString username;

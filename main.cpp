@@ -1,10 +1,23 @@
 #include <QApplication>
 #include "login.h"
 #include "mainwindow.h"
+#include <QFile>
+#include <QStandardPaths>
+
+void copyFileToAppData(const QString &sourcePath, const QString &destPath)
+{
+    if (!QFile::exists(destPath)) {
+        QFile::copy(sourcePath, destPath);
+        QFile::setPermissions(destPath, QFileDevice::ReadOwner | QFileDevice::WriteOwner);
+    }
+}
 
 int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
+
+    QString appDataPath = QStandardPaths::writableLocation(QStandardPaths::AppDataLocation);
+    QDir().mkpath(appDataPath);
 
     Login login;
     MainWindow w;

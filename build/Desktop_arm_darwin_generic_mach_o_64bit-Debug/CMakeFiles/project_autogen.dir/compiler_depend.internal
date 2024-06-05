@@ -3,6 +3,7 @@
 
 /Users/mansur/Desktop/Spotify_projectMisha/build/Desktop_arm_darwin_generic_mach_o_64bit-Debug/project_autogen/timestamp
  /Applications/CMake.app/Contents/bin/cmake
+<<<<<<< HEAD
  /Applications/CMake.app/Contents/share/cmake-3.29/Modules/CMakeCXXCompiler.cmake.in
  /Applications/CMake.app/Contents/share/cmake-3.29/Modules/CMakeCXXCompilerABI.cpp
  /Applications/CMake.app/Contents/share/cmake-3.29/Modules/CMakeCXXInformation.cmake
@@ -27671,6 +27672,8 @@
  /opt/homebrew/lib/cmake/Qt6WidgetsTools/Qt6WidgetsToolsTargets.cmake
  /opt/homebrew/lib/cmake/Qt6WidgetsTools/Qt6WidgetsToolsVersionlessTargets.cmake
  /Applications/CMake.app/Contents/bin/cmake
+=======
+>>>>>>> 3dd9605dfa16e71ca2e8e58a293a1c4b9d8bd69a
  /Applications/CMake.app/Contents/share/cmake-3.29/Modules/CMakeCXXInformation.cmake
  /Applications/CMake.app/Contents/share/cmake-3.29/Modules/CMakeCheckCompilerFlagCommonPatterns.cmake
  /Applications/CMake.app/Contents/share/cmake-3.29/Modules/CMakeCommonLanguageInclude.cmake

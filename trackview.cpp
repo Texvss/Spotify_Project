@@ -13,8 +13,6 @@ TrackView::TrackView(QWidget *parent, Spotify *spotifyInstance)
     , liked(new Liked(this))
 {
     ui->setupUi(this);
-    ui->backButton->setStyleSheet("QPushButton:!hover{border: 1px solid black;border-radius: 5px;background-color: #b83030;color:white;}"
-                                  "QPushButton:hover{border: 1px solid black;border-radius: 5px;background-color: #3d010e;color:#c0c0c0;}");
     connect(ui->backButton, &QPushButton::clicked, this, &TrackView::on_backButton_clicked);
     ui->trackView->setModel(model);
     connect(ui->trackView->selectionModel(), &QItemSelectionModel::currentChanged, this, &TrackView::onSongSelected);
@@ -69,6 +67,7 @@ void TrackView::onViewLyricsAndSimilar()
         QString songName = nameParts[1].trimmed();
 
         Lyrics *lyricsWindow = new Lyrics(nullptr, spotify);
+        lyricsWindow->loadLyrics(artistName, songName);
         lyricsWindow->showClusterForSong(artistName, songName);
         lyricsWindow->show();
     }

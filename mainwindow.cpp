@@ -2,12 +2,16 @@
 #include <QMessageBox>
 #include <QRegularExpression>
 #include <QRegularExpressionMatch>
+#include <QDir>
+#include <QTemporaryFile>
 #include "./ui_mainwindow.h"
 #include "lyrics.h"
 #include "spotify.h"
 #include "trackview.h"
 
+
 const QString path = ":/data/clusters_50.csv";
+
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
@@ -17,8 +21,6 @@ MainWindow::MainWindow(QWidget *parent)
     , trackView(nullptr)
     , stackedWidget(new QStackedWidget(this))
     , searchModel(new QStandardItemModel(this))
-    , lyricsView(new Lyrics(this))
-    , process(new QProcess(this))
     , login(nullptr)
     , liked(new Liked(this))
 {
@@ -27,7 +29,6 @@ MainWindow::MainWindow(QWidget *parent)
     this->hide();
     ui->searchList->setVisible(false);
 
-    // Add connections for buttons
     connect(ui->popButton, &QPushButton::clicked, this, &MainWindow::on_popButton_clicked);
     connect(ui->rapButton, &QPushButton::clicked, this, &MainWindow::on_rapButton_clicked);
     connect(ui->rockButton, &QPushButton::clicked, this, &MainWindow::on_rockButton_clicked);
@@ -46,23 +47,20 @@ MainWindow::MainWindow(QWidget *parent)
     connect(ui->edmButton, &QPushButton::clicked, this, &MainWindow::on_edmButton_clicked);
     connect(ui->searchLine, &QLineEdit::textChanged, this, &MainWindow::on_searchLine_textChanged);
     connect(ui->searchList, &QListView::clicked, this, &MainWindow::on_searchList_clicked);
-    connect(process, QOverload<int, QProcess::ExitStatus>::of(&QProcess::finished), this, &MainWindow::onLyricsFetched);
-    connect(lyricsView, &Lyrics::backLyricsClicked, this, &MainWindow::on_backButton_clicked);
     connect(liked, &Liked::backLikedClicked, this, &MainWindow::on_backButton_clicked);
 
     listModel->setStringList(spotifyData->getTrackNames());
     ui->searchLine->setPlaceholderText("Search...");
-    ui->searchLine->setStyleSheet("border: 1px solid black;border-radius: 5px;background-color: #717072;color:white;");
-
+    ui->searchLine->setStyleSheet("QLineEdit { padding: 5px; border: 1px solid gray; border-radius: 5px; }");
     ui->searchList->setStyleSheet("QListView { padding: 5px; border: 1px solid gray; border-radius: 5px; }");
+
     ui->likedButton->setStyleSheet("QPushButton:!hover{border: 1px solid black;border-radius: 5px;background-color: #717072;color:white;}"
                                    "QPushButton:hover{border: 1px solid black;border-radius: 5px;background-color: #33322e;color:#c0c0c0;}");
 
+
     stackedWidget->addWidget(ui->centralwidget);
-    stackedWidget->addWidget(lyricsView);
     stackedWidget->addWidget(liked);
     setCentralWidget(stackedWidget);
-
 }
 
 
@@ -74,8 +72,8 @@ MainWindow::~MainWindow()
     delete trackView;
     delete searchModel;
     delete stackedWidget;
-    delete process;
 }
+
 
 void MainWindow::showUsername(const QString &username)
 {
@@ -84,8 +82,8 @@ void MainWindow::showUsername(const QString &username)
     if (trackView) {
         trackView->setUsername(username);
     }
-
-    if (liked) {
+    if (liked)
+    {
         liked->loadPlaylist(username);
     }
     qDebug() << username;
@@ -259,17 +257,28 @@ void MainWindow::on_edmButton_clicked()
     }
 }
 
+// void MainWindow::fetchLyrics(const QString &artistName, const QString &songName)
+// {
+//     QStringList arguments;
+//     arguments << artistName << songName;
+
+//     qDebug() << "Fetching lyrics for:" << artistName << "-" << songName;
+//     process->start("python3",
+//                    QStringList() << "/Users/mansur/PycharmProjects/genius_parser/parser.py" << arguments);
+//     process->waitForFinished();
+//     qDebug() << "Results: "
+//              << "/n" << process->readAllStandardOutput();
+// }
+
 void MainWindow::fetchLyrics(const QString &artistName, const QString &songName)
 {
-    QStringList arguments;
-    arguments << artistName << songName;
 
-    qDebug() << "Fetching lyrics for:" << artistName << "-" << songName;
-    process->start("sh",
-                   QStringList() << "/Users/mansur/PycharmProjects/genius_parser/run.sh" << arguments);
-    process->waitForFinished();
-    qDebug() << "Results: "
-             << "/n" << process->readAllStandardOutput();
+    Lyrics *lyricsView = new Lyrics(nullptr, spotifyData);
+
+    lyricsView->loadLyrics(artistName, songName);
+    lyricsView->showClusterForSong(artistName, songName);
+    lyricsView->show();
+
 }
 
 void MainWindow::on_searchLine_textChanged(const QString &text)
@@ -307,23 +316,13 @@ void MainWindow::on_searchList_clicked(const QModelIndex &index)
     fetchLyrics(artistName, trackName);
 }
 
-void MainWindow::onLyricsFetched(int exitCode, QProcess::ExitStatus exitStatus)
-{
-    if (exitStatus == QProcess::NormalExit && exitCode == 0) {
-        QString lyrics = process->readAllStandardOutput();
 
-        lyricsView->setLyrics(lyrics);
-        stackedWidget->setCurrentWidget(lyricsView);
-        QString errorOutput = process->readAllStandardError();
-
-        // QMessageBox::critical(this, "Error", "Failed to fetch lyrics");
-    }
-}
 
 void MainWindow::on_backButton_clicked()
 {
     stackedWidget->setCurrentWidget(ui->centralwidget);
 }
+
 
 void MainWindow::on_likedButton_clicked()
 {
@@ -337,5 +336,9 @@ void MainWindow::on_likedButton_clicked()
 
 void MainWindow::on_backLiked_clicked()
 {
-    stackedWidget->setCurrentWidget(ui->centralwidget);
+    // stackedWidget->setCurrentWidget(ui->centralwidget);
 }
+
+
+
+

@@ -274,6 +274,9 @@ color:#717072;
                   <property name="alternatingRowColors">
                    <bool>true</bool>
                   </property>
+                  <property name="resizeMode">
+                   <enum>QListView::Fixed</enum>
+                  </property>
                   <property name="uniformItemSizes">
                    <bool>true</bool>
                   </property>

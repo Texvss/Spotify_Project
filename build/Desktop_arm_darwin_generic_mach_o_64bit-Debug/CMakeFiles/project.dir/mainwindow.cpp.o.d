@@ -1065,9 +1065,17 @@ CMakeFiles/project.dir/mainwindow.cpp.o: \
   /opt/homebrew/lib/QtWidgets.framework/Headers/QStackedWidget \
   /opt/homebrew/lib/QtWidgets.framework/Headers/qstackedwidget.h \
   /opt/homebrew/include/QtWidgets/qframe.h \
+<<<<<<< HEAD
   /opt/homebrew/lib/QtCore.framework/Headers/QStringListModel \
   /opt/homebrew/lib/QtCore.framework/Headers/qstringlistmodel.h \
   /opt/homebrew/include/QtCore/qabstractitemmodel.h \
+=======
+  /opt/homebrew/lib/QtGui.framework/Headers/QStandardItemModel \
+  /opt/homebrew/lib/QtGui.framework/Headers/qstandarditemmodel.h \
+  /opt/homebrew/include/QtCore/qabstractitemmodel.h \
+  /opt/homebrew/lib/QtCore.framework/Headers/QStringListModel \
+  /opt/homebrew/lib/QtCore.framework/Headers/qstringlistmodel.h \
+>>>>>>> 3dd9605dfa16e71ca2e8e58a293a1c4b9d8bd69a
   /Users/mansur/Desktop/Spotify_projectMisha/liked.h \
   /opt/homebrew/lib/QtSql.framework/Headers/QSqlDatabase \
   /opt/homebrew/lib/QtSql.framework/Headers/qsqldatabase.h \
@@ -1500,14 +1508,22 @@ CMakeFiles/project.dir/mainwindow.cpp.o: \
   /opt/homebrew/lib/QtCore.framework/Headers/QList \
   /opt/homebrew/lib/QtCore.framework/Headers/QString \
   /opt/homebrew/lib/QtCore.framework/Headers/QStringList \
+<<<<<<< HEAD
   /opt/homebrew/lib/QtGui.framework/Headers/QStandardItemModel \
   /opt/homebrew/lib/QtGui.framework/Headers/qstandarditemmodel.h \
+=======
+>>>>>>> 3dd9605dfa16e71ca2e8e58a293a1c4b9d8bd69a
   /opt/homebrew/lib/QtWidgets.framework/Headers/QMessageBox \
   /opt/homebrew/lib/QtWidgets.framework/Headers/qmessagebox.h \
   /opt/homebrew/include/QtWidgets/qdialog.h \
   /opt/homebrew/include/QtWidgets/qdialogbuttonbox.h \
   /opt/homebrew/lib/QtCore.framework/Headers/QRegularExpression \
   /opt/homebrew/lib/QtCore.framework/Headers/QRegularExpressionMatch \
+<<<<<<< HEAD
+=======
+  /opt/homebrew/lib/QtCore.framework/Headers/QDir \
+  /opt/homebrew/lib/QtCore.framework/Headers/QTemporaryFile \
+>>>>>>> 3dd9605dfa16e71ca2e8e58a293a1c4b9d8bd69a
   /Users/mansur/Desktop/Spotify_projectMisha/build/Desktop_arm_darwin_generic_mach_o_64bit-Debug/project_autogen/include/./ui_mainwindow.h \
   /opt/homebrew/include/QtGui/QIcon \
   /opt/homebrew/lib/QtGui.framework/Headers/qicon.h \

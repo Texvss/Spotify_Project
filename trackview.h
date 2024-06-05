@@ -2,7 +2,6 @@
 #define TRACKVIEW_H
 
 #include <QWidget>
-#include <QMenu>
 #include <QContextMenuEvent>
 #include "spotify.h"
 #include <QStringListModel>
@@ -27,6 +26,7 @@ public:
 signals:
     void backButtonClicked();
 
+
 protected:
     void contextMenuEvent(QContextMenuEvent *event) override;
 
@@ -40,8 +40,10 @@ private:
     Ui::TrackView *ui;
     QStringListModel *model;
     QMenu *contextMenu;
+
     Spotify *spotify;
     QString currentTrackId;
+
     Liked *liked;
     QString username;
 };

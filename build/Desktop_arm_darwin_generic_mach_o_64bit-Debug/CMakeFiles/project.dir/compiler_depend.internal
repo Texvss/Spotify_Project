@@ -4352,6 +4352,7 @@
  /opt/homebrew/lib/cmake/Qt6WidgetsTools/Qt6WidgetsToolsTargets-release.cmake
  /opt/homebrew/lib/cmake/Qt6WidgetsTools/Qt6WidgetsToolsTargets.cmake
  /opt/homebrew/lib/cmake/Qt6WidgetsTools/Qt6WidgetsToolsVersionlessTargets.cmake
+<<<<<<< HEAD
  /Applications/CMake.app/Contents/bin/cmake
  /Applications/CMake.app/Contents/share/cmake-3.29/Modules/CMakeCXXInformation.cmake
  /Applications/CMake.app/Contents/share/cmake-3.29/Modules/CMakeCheckCompilerFlagCommonPatterns.cmake
@@ -30452,6 +30453,8 @@
  /opt/homebrew/lib/cmake/Qt6WidgetsTools/Qt6WidgetsToolsTargets-release.cmake
  /opt/homebrew/lib/cmake/Qt6WidgetsTools/Qt6WidgetsToolsTargets.cmake
  /opt/homebrew/lib/cmake/Qt6WidgetsTools/Qt6WidgetsToolsVersionlessTargets.cmake
+=======
+>>>>>>> 3dd9605dfa16e71ca2e8e58a293a1c4b9d8bd69a
 
 CMakeFiles/project.dir/liked.cpp.o
  /Users/mansur/Desktop/Spotify_projectMisha/liked.cpp
@@ -33224,6 +33227,10 @@ CMakeFiles/project.dir/login.cpp.o
  /opt/homebrew/include/QtWidgets/qtwidgetsglobal.h
  /opt/homebrew/include/QtWidgets/qwidget.h
  /opt/homebrew/lib/QtCore.framework/Headers/QCryptographicHash
+<<<<<<< HEAD
+=======
+ /opt/homebrew/lib/QtCore.framework/Headers/QDir
+>>>>>>> 3dd9605dfa16e71ca2e8e58a293a1c4b9d8bd69a
  /opt/homebrew/lib/QtCore.framework/Headers/QList
  /opt/homebrew/lib/QtCore.framework/Headers/QProcess
  /opt/homebrew/lib/QtCore.framework/Headers/QString
@@ -35844,8 +35851,15 @@ CMakeFiles/project.dir/main.cpp.o
  /opt/homebrew/include/QtWidgets/qtwidgetsexports.h
  /opt/homebrew/include/QtWidgets/qtwidgetsglobal.h
  /opt/homebrew/include/QtWidgets/qwidget.h
+<<<<<<< HEAD
  /opt/homebrew/lib/QtCore.framework/Headers/QList
  /opt/homebrew/lib/QtCore.framework/Headers/QProcess
+=======
+ /opt/homebrew/lib/QtCore.framework/Headers/QFile
+ /opt/homebrew/lib/QtCore.framework/Headers/QList
+ /opt/homebrew/lib/QtCore.framework/Headers/QProcess
+ /opt/homebrew/lib/QtCore.framework/Headers/QStandardPaths
+>>>>>>> 3dd9605dfa16e71ca2e8e58a293a1c4b9d8bd69a
  /opt/homebrew/lib/QtCore.framework/Headers/QString
  /opt/homebrew/lib/QtCore.framework/Headers/QStringList
  /opt/homebrew/lib/QtCore.framework/Headers/QStringListModel
@@ -37382,6 +37396,10 @@ CMakeFiles/project.dir/mainwindow.cpp.o
  /opt/homebrew/include/QtWidgets/qtwidgetsexports.h
  /opt/homebrew/include/QtWidgets/qtwidgetsglobal.h
  /opt/homebrew/include/QtWidgets/qwidget.h
+<<<<<<< HEAD
+=======
+ /opt/homebrew/lib/QtCore.framework/Headers/QDir
+>>>>>>> 3dd9605dfa16e71ca2e8e58a293a1c4b9d8bd69a
  /opt/homebrew/lib/QtCore.framework/Headers/QList
  /opt/homebrew/lib/QtCore.framework/Headers/QProcess
  /opt/homebrew/lib/QtCore.framework/Headers/QRegularExpression
@@ -37389,6 +37407,10 @@ CMakeFiles/project.dir/mainwindow.cpp.o
  /opt/homebrew/lib/QtCore.framework/Headers/QString
  /opt/homebrew/lib/QtCore.framework/Headers/QStringList
  /opt/homebrew/lib/QtCore.framework/Headers/QStringListModel
+<<<<<<< HEAD
+=======
+ /opt/homebrew/lib/QtCore.framework/Headers/QTemporaryFile
+>>>>>>> 3dd9605dfa16e71ca2e8e58a293a1c4b9d8bd69a
  /opt/homebrew/lib/QtCore.framework/Headers/q20algorithm.h
  /opt/homebrew/lib/QtCore.framework/Headers/q20chrono.h
  /opt/homebrew/lib/QtCore.framework/Headers/q20functional.h
