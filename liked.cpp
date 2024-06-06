@@ -23,7 +23,7 @@ Liked::Liked(QWidget *parent)
     ui->likedTracks->horizontalHeader()->setSectionResizeMode(QHeaderView::ResizeToContents);
     ui->likedTracks->verticalHeader()->setSectionResizeMode(QHeaderView::ResizeToContents);
     ui->likedTracks->setColumnCount(2);
-    QStringList columnNames = {"Artist", "Track"};
+    QStringList columnNames = {"Track", "Artist"};
     ui->likedTracks->setHorizontalHeaderLabels(columnNames);
     ui->likedTracks->setSelectionMode(QAbstractItemView::SingleSelection);
     ui->likedTracks->setSelectionBehavior(QAbstractItemView::SelectRows);
